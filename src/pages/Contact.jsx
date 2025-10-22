@@ -5,7 +5,7 @@ import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 const Contact = () => {
   return (
     <div className="font-[Poppins] text-black bg-black">
-   <section className="px-8 md:px-20 pt-28 pb-16 text-left">
+   <section className="px-8 md:px-20 pt-28 pb-16 text-left border-b border-[#1b2e1b]">
         <motion.h1
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -27,7 +27,7 @@ const Contact = () => {
       {/* === GRID SECTION === */}
       <section className="grid grid-cols-1 md:grid-cols-[40%_60%] min-h-[80vh]">
         {/* LEFT SIDE: LET'S CONNECT SECTION */}
-        <div className="bg-black text-white flex flex-col justify-center p-10 md:p-16 border-t-2 border-green-600">
+        <div className="bg-black text-white flex flex-col justify-center p-10 md:p-16 ">
           <h2 className="text-3xl font-bold mb-6">Let’s Connect</h2>
           <p className="text-gray-400 mb-8 leading-relaxed">
             Fill out the form and we’ll get back to you shortly.
@@ -55,7 +55,7 @@ const Contact = () => {
         </div>
 
         {/* RIGHT SIDE: CONTACT FORM SECTION */}
-        <div className="bg-black border-t-2 border-l-2  border-green-600 flex justify-center items-center p-10 md:p-20">
+        <div className="bg-black  flex justify-center items-center p-10 md:p-20">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
