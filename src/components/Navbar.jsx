@@ -1,50 +1,52 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { CircleX } from "lucide-react";
 
 const Navbar = ({ activePage }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // ✅ modal state
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
- const [isOpen, setIsOpen] = useState(false);
+
   return (
     <motion.nav
-      className="fixed top-0 z-50 w-full "
+      className="fixed top-0 z-50 w-full"
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <motion.div
-  style={{ willChange: "transform, background, filter, box-shadow" }}
-  animate={{
-    background: isScrolled
-      ? "linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3))"
-      : "rgba(0,0,0,0)",
-    border: isScrolled
-      ? "1px solid rgba(100,255,100,0.25)"
-      : "1px solid transparent",
-    boxShadow: isScrolled
-      ? "0 4px 25px rgba(0,255,100,0.15)"
-      : "0 4px 30px rgba(0,0,0,0)",
-    backdropFilter: isScrolled ? "blur(16px)" : "blur(0px)",
-    scale: isScrolled ? 0.97 : 1,
-    width: isScrolled ? "80%" : "90%",
-  }}
-  transition={{
-    background: { duration: 0.25, ease: "easeInOut" },
-    border: { duration: 0.2, ease: "easeOut" },
-    boxShadow: { duration: 0.25, ease: "easeInOut" },
-    backdropFilter: { duration: 0.3, ease: "easeOut" },
-    scale: { duration: 0.2, ease: "easeOut" },
-    width: { duration: 0.25, ease: "easeInOut" },
-  }}
-  className="mx-auto flex items-center justify-center md:justify-between px-6 py-4 rounded-full mt-2 transition-all duration-300"
->
+        style={{ willChange: "transform, background, filter, box-shadow" }}
+        animate={{
+          background: isScrolled
+            ? "linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3))"
+            : "rgba(0,0,0,0)",
+          border: isScrolled
+            ? "1px solid rgba(100,255,100,0.25)"
+            : "1px solid transparent",
+          boxShadow: isScrolled
+            ? "0 4px 25px rgba(0,255,100,0.15)"
+            : "0 4px 30px rgba(0,0,0,0)",
+          backdropFilter: isScrolled ? "blur(16px)" : "blur(0px)",
+          scale: isScrolled ? 0.97 : 1,
+          width: isScrolled ? "80%" : "90%",
+        }}
+        transition={{
+          background: { duration: 0.25, ease: "easeInOut" },
+          border: { duration: 0.2, ease: "easeOut" },
+          boxShadow: { duration: 0.25, ease: "easeInOut" },
+          backdropFilter: { duration: 0.3, ease: "easeOut" },
+          scale: { duration: 0.2, ease: "easeOut" },
+          width: { duration: 0.25, ease: "easeInOut" },
+        }}
+        className="mx-auto flex items-center justify-center md:justify-between px-6 py-4 rounded-full mt-2 transition-all duration-300"
+      >
         {/* 📱 Mobile Button */}
         <div className="md:hidden absolute left-6">
           <button
@@ -76,9 +78,8 @@ const Navbar = ({ activePage }) => {
           <img
             src="white-logo.png"
             alt="Logo"
-            className="w-30 h-12  object-cover  "
+            className="w-30 h-12 object-cover"
           />
-        
         </motion.div>
 
         {/* 🌈 Links */}
@@ -87,11 +88,10 @@ const Navbar = ({ activePage }) => {
             <Link
               key={name}
               to={`/${name === "Home" ? "" : name.toLowerCase()}`}
-              className={`text-white hover:text-green-400 font-medium transition ${
-                activePage === name.toLowerCase()
-                  ? "text-green-400 font-bold"
-                  : ""
-              }`}
+              className={`text-white hover:text-green-400 font-medium transition ${activePage === name.toLowerCase()
+                ? "text-green-400 font-bold"
+                : ""
+                }`}
             >
               {name}
             </Link>
@@ -105,8 +105,9 @@ const Navbar = ({ activePage }) => {
           transition={{ duration: 0.2, ease: "easeOut" }}
         >
           <button
-             onClick={() => setIsOpen(true)}
-            className="md:flex hidden  bg-gradient-to-l from-green-600 to-green-950 text-white font-semibold px-5 py-2 text-sm rounded-full transition-all duration-300 shadow-md">
+            onClick={() => setIsModalOpen(true)} // ✅ open modal
+            className="md:flex hidden bg-gradient-to-l from-green-600 to-green-950 text-white font-semibold px-5 py-2 text-sm rounded-full transition-all duration-300 shadow-md"
+          >
             Speak to an expert
           </button>
         </motion.div>
@@ -128,11 +129,10 @@ const Navbar = ({ activePage }) => {
                   key={name}
                   to={`/${name === "Home" ? "" : name.toLowerCase()}`}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block text-white hover:text-black transition ${
-                    activePage === name.toLowerCase()
-                      ? "text-black font-bold"
-                      : ""
-                  }`}
+                  className={`block text-white hover:text-black transition ${activePage === name.toLowerCase()
+                    ? "text-black font-bold"
+                    : ""
+                    }`}
                 >
                   {name}
                 </Link>
@@ -148,82 +148,71 @@ const Navbar = ({ activePage }) => {
           </motion.div>
         )}
       </AnimatePresence>
-        {isOpen && (
-        <div
-          className="fixed inset-0   flex justify-center items-center z-50"
-          onClick={() => setIsOpen(false)} // background click close
-        >
-            <div className="bg-gradient-to-b from-[#0b0d13] via-[#111827] to-[#0b0d13] border-t-2 border-l-2  border-gray-600 flex justify-center items-center p-10 md:p-20">
-                   <motion.div
-                     initial={{ opacity: 0, y: 40 }}
-                     animate={{ opacity: 1, y: 0 }}
-                     transition={{ duration: 0.6 }}
-                     className="  w-full max-w-3xl p-8 md:p-12"
-                   >
-                     <motion.h2
-                       initial={{ opacity: 0, y: 40 }}
-                       animate={{ opacity: 1, y: 0 }}
-                       transition={{ duration: 0.8 }}
-                       className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#34C759] to-[#f8faf9] mb-4 sm:mb-5 text-center"
-                     >
-                       Contact Us
-                     </motion.h2>
-                     <form className="space-y-6">
-                       <input
-                         type="text"
-                         placeholder="Your challenge / goal*"
-                         className="w-full px-4 py-3 text-white border border-gray-800  focus:ring-1 focus:ring-[#34C759] outline-none"
-                       />
-         
-                       <div className="grid md:grid-cols-2 gap-6">
-                         <input
-                           type="text"
-                           placeholder="Name*"
-                           className="w-full px-4 py-3 text-white border border-gray-800  focus:ring-1 focus:ring-[#34C759] outline-none"
-                         />
-                         <input
-                           type="email"
-                           placeholder="Corporate email*"
-                           className="w-full px-4 py-3 text-white border border-gray-800  focus:ring-1 focus:ring-[#34C759] outline-none"
-                         />
-                       </div>
-         
-                       <div className="grid md:grid-cols-2 gap-6">
-                         <input
-                           type="text"
-                           placeholder="Phone number"
-                           className="w-full px-4 py-3 text-white border border-gray-800  focus:ring-1 focus:ring-[#34C759] outline-none"
-                         />
-                         <input
-                           type="text"
-                           placeholder="Company"
-                           className="w-full px-4 py-3 text-white border border-gray-800  focus:ring-1 focus:ring-[#34C759] outline-none"
-                         />
-                       </div>
-         
-                       <div className="flex items-center gap-3 text-sm text-white">
-                         <input type="checkbox" className="accent-[#34C759]" />
-                         <span>Secure data with NDA first</span>
-                       </div>
-         
-                       <textarea
-                         placeholder="Your Message"
-                         rows="5"
-                         className="w-full px-4 py-3 text-white border border-gray-800 focus:ring-1 focus:ring-[#34C759] outline-none resize-none"
-                       ></textarea>
-         
-                       <motion.button
-                         whileHover={{ scale: 1.05 }}
-                         whileTap={{ scale: 0.95 }}
-                         className="w-full bg-[#34C759] hover:bg-[#28a745] text-white py-3 rounded-xl font-semibold text-lg transition-all duration-300 shadow-md"
-                       >
-                         Send Message
-                       </motion.button>
-                     </form>
-                   </motion.div>
-                 </div>
-        </div>
-      )}
+
+      {/* 💬 Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            key="modal"
+            className="fixed inset-0 flex justify-center items-center bg-black/60 backdrop-blur-sm z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="shadow-[0_4px_25px_rgba(0,255,100,0.15)] backdrop-blur-md border border-white/10 p-8 w-[90%] sm:w-[800px] bg-white"
+            >
+              <div className="flex items-center text-[12px] mb-10">
+                <img src="./movingIcon.gif" width={20} />
+                <p>Let’s Get Started</p>
+              </div>
+              <div className="modal-header flex justify-between items-center mb-6">
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">
+                  This Could Be the Start of <br className="hidden sm:block" />
+                  Something Incredible!
+                </h3>
+
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="text-gray-500 hover:text-[#34C759] transition"
+                >
+                  <CircleX className="w-6 h-6" />
+                </button>
+              </div>
+
+
+              <form className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full border border-gray-300 px-4 py-2 focus:outline-none"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className="w-full border border-gray-300 px-4 py-2 focus:outline-none"
+                />
+                <textarea
+                  rows="3"
+                  placeholder="Your Message"
+                  className="w-full border border-gray-300 px-4 py-2 focus:outline-none"
+                ></textarea>
+
+                <button
+                  type="submit"
+                  className="w-full bg-green-600 hover:bg-green-700 py-2 rounded-lg font-semibold transition"
+                >
+                  Submit
+                </button>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

@@ -34,19 +34,19 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className=" bg-black text-white py-24 px-6 md:px-16 lg:px-28"
-    
-       style={{
-  backgroundImage: `linear-gradient(rgba(0, 60, 0, 0.15), rgba(0, 0, 0, 0.85)), url('line-vector.svg')`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-}}
-
-     >
-      <div className="max-w-7xl mx-auto"
-      
-      >
-        {/* Left-aligned heading */}
+    <section
+      className=" bg-black text-white py-24 px-6 md:px-16 lg:px-28"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 60, 0, 0.15), rgba(0, 0, 0, 0.85)), url('line-vector.svg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center text-[12px] mb-10 gap-2">
+          <img src="./movingIcon.gif" width={20} />
+          <p>Hear It Straight From Our Clients</p>
+        </div>
         <motion.div
           className="mb-14"
           initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,6 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        {/* Smooth Auto Slider */}
         <Swiper
           modules={[Autoplay]}
           spaceBetween={30}
@@ -73,12 +72,12 @@ const Testimonials = () => {
             768: { slidesPerView: 2 },
           }}
           autoplay={{
-            delay: 1500, // continuous motion
+            delay: 1500, 
             disableOnInteraction: false,
           }}
-          speed={500} // smooth transition speed
+          speed={500} 
           loop={true}
-          allowTouchMove={true} 
+          allowTouchMove={true}
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
@@ -86,7 +85,6 @@ const Testimonials = () => {
                 className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-xl text-left relative hover:scale-[1.02] transition-transform duration-300"
                 initial={{ opacity: 0, y: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
-            
               >
                 <FaQuoteLeft className="text-[#34C759] text-3xl mb-4 opacity-80" />
                 <p className="text-gray-100 text-lg leading-relaxed font-inter mb-6 italic">

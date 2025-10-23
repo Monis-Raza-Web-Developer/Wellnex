@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import { FaBrain, FaHeart, FaGlobe } from "react-icons/fa";
 
-
 const OurVision = () => {
   const cards = [
     {
@@ -33,21 +32,22 @@ const OurVision = () => {
   ];
 
   return (
-     
-    <section className="bg-[#0A0A0A] font-[Poppins] text-white py-14 sm:py-16 lg:py-24  bg-no-repeat 
+    <section
+      className="bg-[#0A0A0A] font-[Poppins] text-white py-14 sm:py-16 lg:py-24  bg-no-repeat 
   bg-cover 
   bg-center  "
-  
-  style={{
-        backgroundImage: `linear-gradient(rgba(0, 100, 0, 0.3), rgba(0, 0, 0, 0.3)), url('line-vector.svg')`,
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 60, 0, 0.15), rgba(0, 0, 0, 0.85)), url('line-vector.svg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
-  >
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12">
-
-        {/* GRID 1: VIDEO + TEXT */}
+        <div className="flex items-center text-[12px] mb-10 gap-2">
+          <img src="./movingIcon.gif" width={20} />
+          <p>See beyond. Build beyond</p>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 mb-14 items-center">
-          
-          {/* LEFT: VIDEO */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -64,7 +64,6 @@ const OurVision = () => {
             />
           </motion.div>
 
-          {/* RIGHT: TEXT */}
           <motion.div
             className="text-center lg:text-left space-y-6"
             initial={{ opacity: 0, y: 30 }}
@@ -93,12 +92,15 @@ const OurVision = () => {
             </motion.p>
 
             <motion.button
-              className="bg-[#34C759] hover:bg-[#2eb14f] text-black font-semibold px-6 sm:px-8 py-3 rounded-full border-2 border-[#34C759] transition-all duration-300 flex items-center gap-2 mx-auto lg:mx-0 text-sm sm:text-base"
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(52, 199, 89, 0.4)" }}
+              className="bg-[#34C759] hover:bg-[#2eb14f]   bg-gradient-to-l from-green-600 to-green-950 font-semibold px-6 sm:px-8 py-3 rounded-full   transition-all duration-300 flex items-center gap-2 mx-auto lg:mx-0 text-sm sm:text-base"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 10px 25px rgba(52, 199, 89, 0.4)",
+              }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
+              transition={{ delay: 0, duration: 0.1 }}
             >
               Learn More
               <svg
@@ -118,7 +120,6 @@ const OurVision = () => {
           </motion.div>
         </div>
 
-        {/* GRID 2: CARDS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {cards.map((card, i) => (
             <motion.div
@@ -131,7 +132,9 @@ const OurVision = () => {
               <Tilt
                 glareEnable
                 glareMaxOpacity={0.2}
-                glareColor={i === 0 ? "#34C759" : i === 1 ? "#FF6B6B" : "#4ECDC4"}
+                glareColor={
+                  i === 0 ? "#34C759" : i === 1 ? "#FF6B6B" : "#4ECDC4"
+                }
                 scale={1.02}
                 tiltMaxAngleX={12}
                 tiltMaxAngleY={12}
@@ -174,7 +177,6 @@ const OurVision = () => {
         </div>
       </div>
     </section>
-  
   );
 };
 

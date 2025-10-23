@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { GiWeightLiftingUp } from 'react-icons/gi';
 import { MdOutlineSelfImprovement, MdWatch } from 'react-icons/md';
 import { FaHeartbeat, FaRunning } from 'react-icons/fa';
-import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 const Heroo = () => {
   return (
@@ -14,17 +14,9 @@ const Heroo = () => {
         backgroundImage: `linear-gradient(rgba(0, 0, 70, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1920&auto=format&fit=crop')`,
       }}
     >
-    
-
-      {/* Hero Content */}
       <div className="flex items-center justify-center min-h-screen px-5 sm:px-8 md:px-12 lg:px-20 py-10 md:py-0">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-16">
-          {/* Left Side */}
           <div className="text-center md:text-left space-y-5 sm:space-y-6">
-            {/* Headline */}
-           
-
-            {/* Animated Text */}
             <motion.div
               className="text-2xl sm:text-2xl md:text-6xl  text-[#E6F0FA]/90 font-bold font-inter"
               initial={{ opacity: 0, y: 10 }}
@@ -39,7 +31,6 @@ const Heroo = () => {
               />
             </motion.div>
 
-            {/* Description */}
             <motion.p
               className="text-lg sm:text-base md:text-lg text-gray-100/90 max-w-2xl mx-auto md:mx-0 leading-relaxed tracking-wide font-inter"
               initial={{ opacity: 0, y: 10 }}
@@ -51,9 +42,8 @@ const Heroo = () => {
               innovation. Our mission: to merge wellness with what’s next.
             </motion.p>
 
-            {/* Badge */}
             <motion.div
-              className="inline-block bg-[#34C759] text-white px-5 py-2 rounded-full text-sm sm:text-sm md:text-base font-semibold font-inter shadow-lg"
+              className="inline-block bg-gradient-to-l from-green-600 to-green-950 text-white px-5 py-2 rounded-full text-sm sm:text-sm md:text-base font-semibold font-inter shadow-lg"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -61,24 +51,22 @@ const Heroo = () => {
               Trusted by 10K+ Active Users
             </motion.div>
 
-            {/* Buttons */}
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-4 sm:pt-6">
-              <a
-                href="#join"
-                className="bg-gradient-to-r from-[#34C759] to-[#2ca44e] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base font-poppins shadow-md hover:shadow-xl hover:scale-105 transition-all duration-200"
+              <Link
+                to="/contact"
+                className="bg-gradient-to-l from-green-600 to-green-950 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base font-poppins shadow-md hover:shadow-xl hover:scale-105 transition-all duration-200"
               >
                 Join the Movement
-              </a>
-              <a
-                href="#apps"
-                className="border-2 border-[#D4F4E2] text-[#D4F4E2] px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base font-poppins hover:bg-[#D4F4E2] hover:text-[#007BFF] hover:shadow-xl transition-all duration-200"
+              </Link>
+              <Link
+                to="/apps"
+                className="border-1 border-[#D4F4E2] text-[#D4F4E2] px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base font-poppins hover:border-green-950 hover:shadow-[0_4px_25px_rgba(0,255,100,0.15)] transition-all duration-200"
               >
                 Explore Our Apps
-              </a>
+              </Link>
             </div>
           </div>
 
-          {/* Right Side Icons */}
           <div className="hidden md:flex justify-center items-center relative">
             <div className="relative flex justify-center items-center w-[260px] sm:w-[300px] md:w-[320px] h-[260px] sm:h-[300px] md:h-[320px]">
               <motion.div

@@ -24,23 +24,15 @@ const Loader = () => {
             transition: { duration: 1, ease: [0.77, 0, 0.175, 1] }, // smooth cubic bezier
           }}
         >
-          {/* Brand Name Animation */}
-          {/* <motion.h1
-            className="text-3xl md:text-5xl font-bold tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-[#34C759] to-[#f7f7f7]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            Wellnwx Systems
-          </motion.h1> */}
+          
           <img src="white-logo.png" alt="" />
 
-          {/* Dots Animation */}
+          
           <div className="flex space-x-2 mt-6">
             {[0, 1, 2].map((dot) => (
               <motion.span
                 key={dot}
-                className="w-3 h-3 bg-[#00ffcc] rounded-full"
+                className="w-3 h-3 bg-[#3dc218] rounded-full"
                 animate={{ opacity: [0.3, 1, 0.3] }}
                 transition={{
                   duration: 1,

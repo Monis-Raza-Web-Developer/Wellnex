@@ -4,10 +4,8 @@ import { FaChartLine, FaAppleAlt, FaWatchmanMonitoring } from "react-icons/fa";
 const FutureVision = () => {
   return (
     <section className="bg-gradient-to-b from-[#f9fafb] to-white py-16 md:py-20 px-6 sm:px-10"
-    
     >
       <div className="max-w-6xl mx-auto flex flex-col text-center items-center">
-        {/* Heading */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 mb-6 md:mb-8">
           <div className="w-10 md:w-12 h-[2px] bg-[#34C759]" />
           <motion.h2
@@ -31,9 +29,7 @@ const FutureVision = () => {
           into one intelligent, connected experience.
         </motion.p>
 
-        {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12 w-full">
-          {/* Card 1 */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-white shadow-md hover:shadow-xl rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center transition"
@@ -48,7 +44,6 @@ const FutureVision = () => {
             </p>
           </motion.div>
 
-          {/* Card 2 */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-white shadow-md hover:shadow-xl rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center transition"
@@ -63,7 +58,6 @@ const FutureVision = () => {
             </p>
           </motion.div>
 
-          {/* Card 3 */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-white shadow-md hover:shadow-xl rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center transition"
@@ -79,13 +73,12 @@ const FutureVision = () => {
           </motion.div>
         </div>
 
-        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          <button className="bg-[#34C759] hover:bg-[#2FAE4F] text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base md:text-lg rounded-full shadow-md hover:shadow-lg transition">
+          <button className="bg-gradient-to-l from-green-600 to-green-950 text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base md:text-lg rounded-full shadow-md hover:shadow-lg transition">
             Get Early Access
           </button>
         </motion.div>

@@ -1,141 +1,83 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaLinkedinIn, FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import ContactHeroSection from "../components/ContactHeroSection";
+import LetsConnectSection from "../components/LetsConnectSection"
+import ContactFormSection from "../components/ContactFormSection";
 
 const Contact = () => {
-
-  useEffect(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, []);
-
   return (
-    <div className="font-[Poppins] text-black bg-gradient-to-b from-[#0b0d13] via-[#111827] to-[#0b0d13]">
-   <section className="px-8 md:px-20 pt-28 pb-16 text-left"
-     style={{
-  backgroundImage: `linear-gradient(rgba(0, 60, 0, 0.15), rgba(0, 0, 0, 0.85)), url('line-vector.svg')`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-}}
-   >
-        <motion.h1
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#34C759] to-[#f8faf9] mb-4 sm:mb-5"
-                >
-                  Get in Touch with <br /> Wellnex Systems
-                </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 1 }}
-          className="text-gray-400 max-w-2xl mt-6 text-lg leading-relaxed"
-        >
-          Let’s build something extraordinary. Whether you’re a business visionary, a creator, or an innovator — we’d love to connect and collaborate.
-        </motion.p>
-      </section>
+    <div className="bg-gradient-to-b from-[#0b0d13] via-[#111827] to-[#0b0d13] text-white font-[Poppins]">
+      {/* 🌟 HERO SECTION */}
+ <ContactHeroSection/>
 
-      {/* === GRID SECTION === */}
-      <section className="grid grid-cols-1 md:grid-cols-2 min-h-[80vh]">
-        {/* LEFT SIDE: LET'S CONNECT SECTION */}
-        <div className="bg-gradient-to-b from-[#0b0d13] via-[#111827] to-[#0b0d13] text-white flex flex-col justify-center p-10 md:p-16 border-t-2 border-gray-600">
-          <h2 className="text-3xl font-bold mb-6">Let’s Connect</h2>
-          <p className="text-gray-400 mb-8 leading-relaxed">
-            Fill out the form and we’ll get back to you shortly.
-          </p>
-
-          <h3 className="text-lg font-semibold mb-4">What happens next?</h3>
-          <ul className="space-y-4 text-gray-300 text-sm">
-            <li className="flex items-start gap-3">
-              <span className="text-[#34C759] mt-1">✔</span>
-              <span>Our expert will review your request and contact you.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-[#34C759] mt-1">✔</span>
-              <span>If needed, we’ll sign an NDA to ensure your privacy.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-[#34C759] mt-1">✔</span>
-              <span>Our Pre-Sales Manager will send you a proposal.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-[#34C759] mt-1">✔</span>
-              <span>Then we start working on your project together.</span>
-            </li>
-          </ul>
-        </div>
-
-        {/* RIGHT SIDE: CONTACT FORM SECTION */}
-        <div className="bg-gradient-to-b from-[#0b0d13] via-[#111827] to-[#0b0d13] border-t-2 border-l-2  border-gray-600 flex justify-center items-center p-10 md:p-20">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="  w-full max-w-3xl p-8 md:p-12"
-          >
-            <motion.h2
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#34C759] to-[#f8faf9] mb-4 sm:mb-5 text-center"
-                >
-                  Contact Us
-                </motion.h2>
-            <form className="space-y-6">
-              <input
-                type="text"
-                placeholder="Your challenge / goal*"
-                className="w-full px-4 py-3 text-white border border-gray-800  focus:ring-1 focus:ring-[#34C759] outline-none"
-              />
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  placeholder="Name*"
-                  className="w-full px-4 py-3 text-white border border-gray-800  focus:ring-1 focus:ring-[#34C759] outline-none"
-                />
-                <input
-                  type="email"
-                  placeholder="Corporate email*"
-                  className="w-full px-4 py-3 text-white border border-gray-800  focus:ring-1 focus:ring-[#34C759] outline-none"
-                />
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  placeholder="Phone number"
-                  className="w-full px-4 py-3 text-white border border-gray-800  focus:ring-1 focus:ring-[#34C759] outline-none"
-                />
-                <input
-                  type="text"
-                  placeholder="Company"
-                  className="w-full px-4 py-3 text-white border border-gray-800  focus:ring-1 focus:ring-[#34C759] outline-none"
-                />
-              </div>
-
-              <div className="flex items-center gap-3 text-sm text-white">
-                <input type="checkbox" className="accent-[#34C759]" />
-                <span>Secure data with NDA first</span>
-              </div>
-
-              <textarea
-                placeholder="Your Message"
-                rows="5"
-                className="w-full px-4 py-3 text-white border border-gray-800 focus:ring-1 focus:ring-[#34C759] outline-none resize-none"
-              ></textarea>
-
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full bg-[#34C759] hover:bg-[#28a745] text-white py-3 rounded-xl font-semibold text-lg transition-all duration-300 shadow-md"
-              >
-                Send Message
-              </motion.button>
-            </form>
-          </motion.div>
+      {/* 🧭 WHY CONNECT SECTION */}
+      <section className="px-6 md:px-20 py-16">
+        <h2 className="text-3xl font-bold text-center mb-10 text-[#34C759]">Why Connect With Us?</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Strategic Guidance",
+              desc: "We don’t just build — we help you define goals, analyze your audience, and create actionable roadmaps.",
+            },
+            {
+              title: "End-to-End Solutions",
+              desc: "From concept to launch, we handle design, development, and optimization all under one roof.",
+            },
+            {
+              title: "Trusted Expertise",
+              desc: "Our team has worked with startups, enterprises, and global brands — ensuring quality & innovation.",
+            },
+          ].map((card, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.05 }}
+              className="p-8 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl text-center  transition-all shadow-[0_4px_25px_rgba(0,255,100,0.15)] "
+            >
+              <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{card.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
+
+      {/* 🧩 PROCESS SECTION */}
+      <section className="px-6 md:px-20 py-16 border-t border-white/10">
+        <div className="md:flex items-start gap-16">
+         <LetsConnectSection/>
+
+          {/* 💬 CONTACT FORM */}
+         <ContactFormSection/>
+        </div>
+      </section>
+
+      {/* 📞 CONTACT DETAILS + SOCIALS */}
+      <section className="text-center py-20 border-t border-white/10 px-6 ">
+        <h2 className="text-3xl font-bold text-[#34C759] mb-8">Get In Touch</h2>
+        <div className="flex flex-wrap justify-center gap-10 mb-10">
+          <div>
+            <FaEnvelope className="text-[#34C759] text-2xl mx-auto mb-2" />
+            <p className="text-gray-300">contact@company.com</p>
+          </div>
+          <div>
+            <FaPhoneAlt className="text-[#34C759] text-2xl mx-auto mb-2" />
+            <p className="text-gray-300">+92 300 1234567</p>
+          </div>
+          <div>
+            <FaMapMarkerAlt className="text-[#34C759] text-2xl mx-auto mb-2" />
+            <p className="text-gray-300">123 Innovation Street, Karachi</p>
+          </div>
+        </div>
+
+        <div className="flex justify-center gap-6 text-gray-400 text-xl">
+          <FaFacebookF className="hover:text-[#34C759] cursor-pointer transition" />
+          <FaInstagram className="hover:text-[#34C759] cursor-pointer transition" />
+          <FaLinkedinIn className="hover:text-[#34C759] cursor-pointer transition" />
+          <FaTwitter className="hover:text-[#34C759] cursor-pointer transition" />
+        </div>
+      </section>
+
+     
     </div>
   );
 };

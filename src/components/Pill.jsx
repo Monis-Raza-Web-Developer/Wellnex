@@ -11,7 +11,6 @@ const Pill = () => {
     let pillY = mouseY;
     const ease = 0.2;
 
-    // Move handler
     const handleMove = (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;

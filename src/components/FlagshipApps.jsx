@@ -36,7 +36,6 @@ const FlagshipApps = () => {
 
   return (
     <section className="bg-gradient-to-b from-white to-gray-50 py-16 md:py-24 font-[Poppins]">
-      {/* Section Heading */}
       <motion.div
         className="mb-10 md:mb-14 flex justify-center items-center flex-col text-center px-6"
         initial={{ opacity: 0, y: 20 }}
@@ -54,7 +53,6 @@ const FlagshipApps = () => {
         </p>
       </motion.div>
 
-      {/* Apps Section */}
       <div className="flex flex-col gap-20 md:gap-32 items-center justify-center">
         {apps.map((app, index) => (
           <motion.div
@@ -66,7 +64,6 @@ const FlagshipApps = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            {/* Image */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
@@ -81,7 +78,6 @@ const FlagshipApps = () => {
               </div>
             </motion.div>
 
-            {/* Text */}
             <div
               className={`w-full md:w-[45%] text-center md:text-left ${
                 index % 2 === 0 ? "md:ml-8" : "md:mr-8"
@@ -91,9 +87,11 @@ const FlagshipApps = () => {
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-gray-900">
                 {app.name}
               </h3>
-              <p className="text-[#34C759] text-base sm:text-lg font-medium mb-3">
-                {app.tagline}
-              </p>
+
+              <div className="flex items-center mb-10 gap-2">
+                <img src="./movingIcon.gif" width={20} />
+                <p className="text-[#34C759]">{app.tagline}</p>
+              </div>
               <p className="text-gray-600 leading-relaxed mb-5 text-sm sm:text-base">
                 {app.desc}
               </p>
@@ -110,7 +108,7 @@ const FlagshipApps = () => {
                 ))}
               </ul>
 
-              <button className="bg-[#34C759] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base hover:bg-[#28a745] transition">
+              <button className="bg-gradient-to-l from-green-600 to-green-950 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base hover:bg-[#28a745] transition">
                 {app.btnText}
               </button>
             </div>

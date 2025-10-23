@@ -8,13 +8,13 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#030d0a] text-gray-300 py-14 px-6 md:px-16 lg:px-28 border-t border-[#1b3b2a] font-[Poppins]">
+    <footer className="backdrop-blur-xl bg-[#000] text-gray-300 py-14 px-6 md:px-16 lg:px-28 border-t border-[#1b3b2a] font-[Poppins]">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
 
-        {/* 1️⃣ Brand Info */}
         <div>
           <img src="white-logo.png" alt="Wellnex Logo" className="w-36 mb-4" />
           <p className="text-gray-400 leading-relaxed font-inter text-sm">
@@ -24,7 +24,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* 2️⃣ Contact Info */}
         <div>
           <h3 className="text-white font-semibold mb-3 text-lg font-poppins border-l-4 border-[#34C759] pl-3">
             Contact Us
@@ -55,7 +54,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* 3️⃣ Quick Links */}
         <div className="font-inter">
           <h3 className="text-white font-semibold mb-3 text-lg font-poppins border-l-4 border-[#34C759] pl-3">
             Quick Links
@@ -81,7 +79,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* 4️⃣ Social + Newsletter */}
         <div className="md:text-right">
           <h3 className="text-white font-semibold mb-3 text-lg font-poppins border-l-4 border-[#34C759] pl-3 md:border-none md:pl-0">
             Stay Connected
@@ -111,10 +108,13 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="border-t border-[#1b3b2a] mt-10 pt-5 text-center text-xs text-gray-500">
+      <motion.div className="border-t border-[#1b3b2a] mt-10 pt-5 text-center text-xs text-gray-500"
+      initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+      >
         Built with 💚 by the Wellnex Team | Inspired by Health & Technology
-      </div>
+      </motion.div>
     </footer>
   );
 };

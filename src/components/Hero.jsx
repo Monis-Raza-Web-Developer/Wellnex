@@ -8,7 +8,6 @@ const Hero = () => {
   return (
     <section className="relative flex flex-col md:flex-row items-center justify-center overflow-hidden ">
 
-      {/* ✨ Floating particles */}
       {[...Array(20)].map((_, i) => (
         <motion.span
           key={i}
@@ -31,7 +30,6 @@ const Hero = () => {
         />
       ))}
 
-      {/* 🌀 Circle animation */}
       <motion.div className="flex-1 flex justify-center relative z-10">
         <motion.div
         
