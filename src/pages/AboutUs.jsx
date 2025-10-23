@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Parallax } from "react-scroll-parallax";
 import { FaBrain, FaHeart, FaGlobe } from "react-icons/fa";
 import Hero from "../components/Hero";
 
-const AboutUs = () => {
-  return (
-    <div className="font-[Poppins] text-gray-100 bg-gradient-to-b from-[#0b0d13] via-[#111827] to-[#0b0d13] overflow-hidden">
 
+const AboutUs = () => {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+
+  return (
+    <div className="font-[Poppins] text-gray-100 bg-gradient-to-b pt-10 from-[#0b0d13] via-[#111827] to-[#0b0d13] overflow-hidden ">
       {/* HERO / INTRO */}
-      <section className="relative py-20 sm:py-24 md:py-28 px-4 sm:px-8 md:px-16 lg:px-20 text-left border-b border-[#1b2e1b]"
-      
+      <section className="relative py-20 sm:py-24 md:py-34 px-6 sm:px-12 md:px-20 lg:px-20 text-left border-b border-[#1b2e1b]"
+        style={{
+  backgroundImage: `linear-gradient(rgba(0, 60, 0, 0.15), rgba(0, 0, 0, 0.85)), url('line-vector.svg')`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+}}
       >
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
@@ -33,16 +43,19 @@ const AboutUs = () => {
       </section>
 
       {/* MISSION & VISION */}
-      <section className="grid md:grid-cols-2 gap-8 sm:gap-10 max-w-6xl mx-auto px-4 sm:px-8 md:px-12 lg:px-20 py-20 sm:py-24"
-      
+      <section className="grid md:grid-cols-2 gap-8 sm:gap-10 max-w-[100%] mx-auto px-5 sm:px-8 md:px-12 lg:px-20 py-24"
+          
       >
         <Parallax speed={-5}>
           <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="bg-[#1a1f2e] rounded-2xl p-6 sm:p-8 md:p-10 shadow-xl border border-gray-700"
+              whileHover={{ y: -5 }}
+            className="rounded-2xl p-6 sm:p-8 md:p-10 
+shadow-[0_4px_25px_rgba(0,255,100,0.15)] backdrop-blur-md border border-white/10"
           >
             <FaHeart className="text-[#34C759] text-4xl sm:text-5xl mb-4" />
-            <h2 className="text-2xl sm:text-3xl font-semibold mb-3">Our Mission</h2>
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-3">
+              Our Mission
+            </h2>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               To empower every individual to achieve holistic well-being through
               AI-driven tools that connect mind, body, and lifestyle.
@@ -52,11 +65,14 @@ const AboutUs = () => {
 
         <Parallax speed={5}>
           <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="bg-[#1a1f2e] rounded-2xl p-6 sm:p-8 md:p-10 shadow-xl border border-gray-700"
+            whileHover={{ y: -5 }}
+            className="rounded-2xl p-6 sm:p-8 md:p-10 
+shadow-[0_4px_25px_rgba(0,255,100,0.15)] backdrop-blur-md border border-white/10"
           >
             <FaBrain className="text-[#34C759] text-4xl sm:text-5xl mb-4" />
-            <h2 className="text-2xl sm:text-3xl font-semibold mb-3">Our Vision</h2>
+            <h2 className="text-2xl sm:text-3xl font-semibold mb-3">
+              Our Vision
+            </h2>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               To create an interconnected ecosystem of wellness apps that help
               people live mindfully, move intelligently, and heal emotionally.
@@ -66,8 +82,15 @@ const AboutUs = () => {
       </section>
 
       {/* OUR STORY */}
-      <section className="bg-[#111827] py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-20">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+      <section className="bg-[#111827] py-20 sm:py-24 px-5 sm:px-8 md:px-16 lg:px-20"
+      style={{
+  backgroundImage: `linear-gradient(rgba(0, 60, 0, 0.15), rgba(0, 0, 0, 0.85)), url('line-vector.svg')`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+}}
+      >
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center"
+        >
           {/* Text */}
           <motion.div
             className="space-y-6 sm:space-y-8 text-gray-400"
@@ -84,8 +107,9 @@ const AboutUs = () => {
               Our Journey
             </motion.h2>
             <p className="text-sm sm:text-base leading-relaxed">
-              Founded in 2023, Wellnex Systems began as a small vision — to merge
-              the power of artificial intelligence with emotional intelligence.
+              Founded in 2023, Wellnex Systems began as a small vision — to
+              merge the power of artificial intelligence with emotional
+              intelligence.
             </p>
             <p className="text-sm sm:text-base leading-relaxed">
               Over time, we grew into a team of passionate creators, developers,
@@ -105,6 +129,8 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* <TimelineSection/> */}
+
       {/* CORE VALUES */}
       <section className="py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-20 bg-gradient-to-r from-[#10141c] to-[#0b0d13]">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10 sm:mb-16 text-center md:text-left">
@@ -113,17 +139,23 @@ const AboutUs = () => {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {[
             {
-              icon: <FaHeart className="text-[#34C759] text-4xl sm:text-5xl mb-3" />,
+              icon: (
+                <FaHeart className="text-[#34C759] text-4xl sm:text-5xl mb-3" />
+              ),
               title: "Empathy",
               desc: "Understanding human emotions and designing products that care.",
             },
             {
-              icon: <FaBrain className="text-[#34C759] text-4xl sm:text-5xl mb-3" />,
+              icon: (
+                <FaBrain className="text-[#34C759] text-4xl sm:text-5xl mb-3" />
+              ),
               title: "Innovation",
               desc: "Blending AI with wellness to unlock new dimensions of growth.",
             },
             {
-              icon: <FaGlobe className="text-[#34C759] text-4xl sm:text-5xl mb-3" />,
+              icon: (
+                <FaGlobe className="text-[#34C759] text-4xl sm:text-5xl mb-3" />
+              ),
               title: "Integrity",
               desc: "Building trust through transparency, respect, and responsibility.",
             },
@@ -132,7 +164,8 @@ const AboutUs = () => {
               key={i}
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
-              className="bg-[#1a1f2e] rounded-2xl p-6 sm:p-8 md:p-10 shadow-lg border border-gray-700 text-center"
+              className="rounded-2xl p-6 sm:p-8 md:p-10 
+shadow-[0_4px_25px_rgba(0,255,100,0.15)] backdrop-blur-md border border-white/10"
             >
               {v.icon}
               <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-white">

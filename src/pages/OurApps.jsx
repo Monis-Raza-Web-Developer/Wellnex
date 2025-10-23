@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaApple, FaGooglePlay, FaHeartbeat, FaBrain, FaCheckCircle, FaChartLine } from "react-icons/fa";
+import {
+  FaApple,
+  FaGooglePlay,
+  FaHeartbeat,
+  FaBrain,
+  FaCheckCircle,
+  FaChartLine,
+} from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -52,12 +59,20 @@ const apps = [
 ];
 
 const OurApps = () => {
-  return (
-    <div className="bg-black text-gray-200 min-h-screen font-[Poppins]"
-    
-    >
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
- <section className="relative py-28 px-6 md:px-20 text-left border-b border-[#1b2e1b] ">
+  return (
+    <div className="bg-gradient-to-b from-[#0b0d13] via-[#111827] to-[#0b0d13] text-gray-200 min-h-screen font-[Poppins]">
+      <section
+        className="relative py-34 px-6 md:px-20 text-left border-b border-[#1b2e1b]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 60, 0, 0.15), rgba(0, 0, 0, 0.85)), url('line-vector.svg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +87,8 @@ const OurApps = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="max-w-2xl text-lg md:text-xl text-gray-400"
         >
-         Built with care, innovation, and intelligence — each app by Wellnex Systems redefines how technology connects with human wellness.
+          Built with care, innovation, and intelligence — each app by Wellnex
+          Systems redefines how technology connects with human wellness.
         </motion.p>
       </section>
 
@@ -101,13 +117,21 @@ const OurApps = () => {
             {/* App Details */}
             <div className="md:w-1/2 w-full">
               {app.icon}
-              <h2 className="text-3xl md:text-4xl font-bold text-[#34C759] mb-2">{app.name}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#34C759] mb-2">
+                {app.name}
+              </h2>
               <p className="text-gray-400 italic mb-5">{app.tagline}</p>
 
-              <h3 className="text-xl font-semibold text-[#34C759] mb-2">Overview</h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">{app.overview}</p>
+              <h3 className="text-xl font-semibold text-[#34C759] mb-2">
+                Overview
+              </h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                {app.overview}
+              </p>
 
-              <h3 className="text-xl font-semibold text-[#34C759] mb-2">Core Features</h3>
+              <h3 className="text-xl font-semibold text-[#34C759] mb-2">
+                Core Features
+              </h3>
               <ul className="text-gray-300 space-y-2 mb-6">
                 {app.highlights.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2">
@@ -116,7 +140,9 @@ const OurApps = () => {
                 ))}
               </ul>
 
-              <h3 className="text-xl font-semibold text-[#34C759] mb-2">How It Helps</h3>
+              <h3 className="text-xl font-semibold text-[#34C759] mb-2">
+                How It Helps
+              </h3>
               <p className="text-gray-300 mb-6">{app.howItHelps}</p>
 
               <div className="flex flex-wrap items-center gap-5 mb-6">
@@ -147,8 +173,6 @@ const OurApps = () => {
           </motion.div>
         ))}
       </div>
-
-   
     </div>
   );
 };

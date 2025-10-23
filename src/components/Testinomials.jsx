@@ -36,9 +36,13 @@ const Testimonials = () => {
   return (
     <section className=" bg-black text-white py-24 px-6 md:px-16 lg:px-28"
     
-     style={{
-        backgroundImage: `linear-gradient(rgba(0, 100, 0, 0.3), rgba(0, 0, 0, 0.3)), url('line-vector.svg')`,
-      }}>
+       style={{
+  backgroundImage: `linear-gradient(rgba(0, 60, 0, 0.15), rgba(0, 0, 0, 0.85)), url('line-vector.svg')`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+}}
+
+     >
       <div className="max-w-7xl mx-auto"
       
       >
