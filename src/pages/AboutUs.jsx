@@ -129,7 +129,7 @@ shadow-[0_4px_25px_rgba(0,255,100,0.15)] backdrop-blur-md border border-white/10
         </div>
       </section>
 
-      {/* <TimelineSection/> */}
+   
 
       {/* CORE VALUES */}
       <section className="py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-20 bg-gradient-to-r from-[#10141c] to-[#0b0d13]">
